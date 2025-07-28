@@ -1,6 +1,9 @@
 {
   "name": "clinician-matching-engine",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "concurrently \"npm:dev:api\" \"npm:dev:web\"",
     "dev:api": "cd apps/api && npm run start",
@@ -8,7 +11,11 @@
   },
   "author": "Eliaz Bobadilla",
   "description": "Technical challenge",
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^9.2.0"
-  }
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
 }
